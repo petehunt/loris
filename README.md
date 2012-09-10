@@ -50,6 +50,10 @@ Because it's flexible enough to build a good abstraction on, but doesn't encoura
 Because the point of this is not to utilize multiple cores or be a great framework for building parallel apps, it's just
 designed to get as much crap out of the UI thread as possible so you can build really responsive client-side apps in JS.
 
+  + What browsers does this work in?
+
+Should "work" everywhere, but you'll only see perf improvements on these browsers: http://caniuse.com/webworkers
+
   + What should I avoid?
 
 Just don't touch the underlying web worker stuff (Loris.worker or call any web worker stuff in the string you eval).
