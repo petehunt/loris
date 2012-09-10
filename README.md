@@ -22,6 +22,9 @@ See the example. Basically all you need to know is Loris.eval(expr, callback, er
 the expression to evaluate, callback is the function that gets called with the result of the eval, and errback gets called
 with any exceptions that may get thrown.
 
+There's also an evalAsync() function if you need to do any fetching. Simply use the callback() and errback() functions to
+return a value or throw an exception respectively.
+
 FAQ
 ---
 
