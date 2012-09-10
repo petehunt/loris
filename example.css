@@ -1,0 +1,23 @@
+#supported,
+#time,
+#status,
+#computetime {
+  font-weight: bold;
+}
+
+#timeblock {
+  font-size: 24px;
+}
+
+.code {
+  font-family: monospace;
+}
+
+#localwarning {
+  color: red;
+  display: none;
+}
+
+.runninglocal #localwarning {
+  display: block;
+}

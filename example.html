@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Pointless Slowloris demo</title>
+<script type="text/javascript" src="slowloris.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="slowloris-example.js"></script>
+<link rel="stylesheet" href="example.css" />
+</head>
+
+<body>
+<h1>Slowloris demo</h1>
+<p id="localwarning"><b>Web workers aren&apos;t available for local files!</b>
+Please load this from a web server (http:// or https:// URL), not locally (file:// URL). An easy way to do this is
+just running <span class="code">python -m SimpleHTTPServer</span> and visiting
+<a href="http://localhost:8000/example.html">http://localhost:8000/example.html</a>.
+</p>
+<p>
+This is an interactive demo of how Slowloris can improve your application performance.
+
+I&apos;ve written a simple clock to represent an interactive UI.
+
+And I&apos;ve also written a terrible for loop that blocks the UI thread. This represents &quot;computation&quot;.
+
+I apologize if this messes up your browser. In fact, if you&apos;re using a browser that doesn't support web workers
+you are probably already screwed; sorry!
+
+Also look out, this spins your CPU and could kill your battery life on a laptop or mobile device.
+
+Once you disable web workers, notice how choppy the clock updates itself. Voila!
+</p>
+<p id="timeblock">The current time is: <span id="time">&nbsp;</span>.</p>
+<p>Last result computed at: <span id="computetime">never</span>.</p>
+<p>Web workers <span id="supported">&nbsp;</span> supported by this browesr.</p>
+<p>Web workers are <span id="status">&nbsp;</span>.</p>
+<p><a href="javascript:;" id="toggle">Toggle web workers</a>.</p>
+</body>
+</html>
