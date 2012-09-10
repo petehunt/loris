@@ -59,6 +59,13 @@ Just don't touch the underlying web worker stuff (Loris.worker or call any web w
 I'd like to build an AMD module loader on top of this so you can just pass a module name and function name rather than a
 string of JS to eval.
 
+  + There isn't a lot of code here, is this even worth putting up on Github?
+
+Yeah. What I think is important is that Slowloris leaves *out* a lot of features in order to encourage engineers to build
+simpler programs using as little parallelism as possible while still solving an important and underserved problem.
+
+Also, writing web workers from scratch is annoying.
+
   + Why did you build this?
 
 Because it's a shame that the web stack has such a bad reputation on mobile vs. native. Sure, native will probably always
