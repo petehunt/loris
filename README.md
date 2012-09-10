@@ -8,7 +8,8 @@ Slowloris is a very simple web worker with the following goals:
   + Legacy compatibility: Older browsers won't break and newer browsers will magically get faster.
   + Ignoring web workers: You shouldn't really need to write a web worker yourself unless you have a special use case.
 
-I've included an example in the repo that has a bit of information about it.
+I've included an example in the repo that has a bit of information about it. I've also made it available live at
+http://www.petehunt.net/slowloris/example.html
 
 Basically, you get an asynchronous eval() function. This is a pretty bad way to write real code; instead you should build a
 better abstraction on top of Slowloris to offload as much as you can into the background thread and only do UI updates once
