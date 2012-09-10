@@ -28,9 +28,21 @@ FAQ
 
 Web workers don't work locally; use a web server. Read the paragraph in the example.
 
+  + How should I use this?
+
+First, don't use it. Build your features first. Avoid premature optimization at all costs. Then when it's time to improve
+performance look for places where your UI stalls and start modifying your code such that the expensive computation gets
+called from Slowloris and the callback upates the UI.
+
+  + Where'd my global scope go?
+
+Web workers execute in their own scope. So you won't have any functions or variables from the browser, nor will you have
+access to the DOM. You can use the importScripts() global in your eval'd code to load .js files similar to how the script
+tag would do it in the markup. See https://developer.mozilla.org/en-US/docs/DOM/Using_web_workers
+
   + Why do I only get eval?
 
-Because it's flexible enough to build a good abstraction on, but doesn't encourage you to actually do "real" concurrency.
+Because it's flexible enough to build a good abstraction on, but doesn't encourage you to actually do "real" parallelism.
 
   + Why do I only get 1 background thread?
 
