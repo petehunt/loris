@@ -8,7 +8,7 @@ window.Loris = (function() {
     this.useWebWorkers = hasWebWorkers;
     if (hasWebWorkers) {
       try {
-        this.worker = new Worker('slowloris-webworker.js');
+        this.worker = new Worker('loris-webworker.js');
       } catch (e) {
         hasWebWorkers = false;
         this.useWebWorkers = false;

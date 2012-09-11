@@ -1,10 +1,10 @@
-Slowloris
-=========
+Loris
+=====
 
-Slowloris is a very simple web worker with the following goals:
+Loris is a very simple web worker with the following goals:
 
   + Get non-UI logic out of the UI thread. This is often one of the main causes of underlying client-side performance problems.
-  + Safety and simplicity: Normal use of Slowloris should not cause any concurrency nightmares (deadlock, race conditions, etc).
+  + Safety and simplicity: Normal use of Loris should not cause any concurrency nightmares (deadlock, race conditions, etc).
   + Legacy compatibility: Older browsers won't break and newer browsers will magically get faster.
   + Ignoring web workers: You shouldn't really need to write a web worker yourself unless you have a special use case.
 
@@ -12,7 +12,7 @@ I've included an example in the repo that has a bit of information about it. I'v
 http://www.petehunt.net/slowloris/example.html
 
 Basically, you get an asynchronous eval() function. This is a pretty bad way to write real code; instead you should build a
-better abstraction on top of Slowloris to offload as much as you can into the background thread and only do UI updates once
+better abstraction on top of Loris to offload as much as you can into the background thread and only do UI updates once
 the computation is complete.
 
 HOWTO
@@ -36,7 +36,7 @@ Web workers don't work locally; use a web server. Read the paragraph in the exam
 
 First, don't use it. Build your features first. Avoid premature optimization at all costs. Then when it's time to improve
 performance look for places where your UI stalls and start modifying your code such that the expensive computation gets
-called from Slowloris and the callback upates the UI.
+called from Loris and the callback upates the UI.
 
   + Where'd my global scope go?
 
@@ -68,7 +68,7 @@ string of JS to eval.
 
   + There isn't a lot of code here, is this even worth putting up on Github?
 
-Yeah. What I think is important is that Slowloris leaves *out* a lot of features in order to encourage engineers to build
+Yeah. What I think is important is that Loris leaves *out* a lot of features in order to encourage engineers to build
 simpler programs using as little parallelism as possible while still solving an important and underserved problem.
 
 Also, writing web workers from scratch is annoying.
@@ -79,5 +79,5 @@ Because it's a shame that the web stack has such a bad reputation on mobile vs. 
 beat web on benchmarks, but it shouldn't beat the web stack by as much as it has been. I think this is mostly due to
 the fact that web front-end engineers put too much computation in the UI thread. There's a few other candiates too:
 inefficient CSS (and JS that drives the CSS!) and poor network fetching/batching/caching of data and code. Hopefully
-Slowloris solves the first problem, education and something like Zepto solves the second one, and something like Backbone
+Loris solves the first problem, education and something like Zepto solves the second one, and something like Backbone
 solves the third problem.
