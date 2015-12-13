@@ -77,7 +77,7 @@ Also, writing web workers from scratch is annoying.
 
 Because it's a shame that the web stack has such a bad reputation on mobile vs. native. Sure, native will probably always
 beat web on benchmarks, but it shouldn't beat the web stack by as much as it has been. I think this is mostly due to
-the fact that web front-end engineers put too much computation in the UI thread. There's a few other candiates too:
+the fact that web front-end engineers put too much computation in the UI thread. There's a few other candidates too:
 inefficient CSS (and JS that drives the CSS!) and poor network fetching/batching/caching of data and code. Hopefully
 Loris solves the first problem, education and something like Zepto solves the second one, and something like Backbone
 solves the third problem.
