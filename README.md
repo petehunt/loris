@@ -1,6 +1,8 @@
 Loris
 =====
 
+![unmaintained](http://img.shields.io/badge/status-unmaintained-red.png)
+
 Loris is a very simple web worker with the following goals:
 
   + Get non-UI logic out of the UI thread. This is often one of the main causes of underlying client-side performance problems.
